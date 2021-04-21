@@ -4,7 +4,7 @@ I'm a support engineer, developer, and mentor currently working in Fort Worth, T
 
 #### Bio
 
-- 😄 Pronouns: He/Him/His
+- 😄 Pronouns: [He/Him/His](https://pronoun.is/he)
 - 🏢 Current employer: [**Twilio**](https://www.twilio.com)
 - ⚙️ Languages: `.py`, `.js`, `.rs`, `.html`, `.css`,
 - 💬 Ask me about: **git**, **github**, **static site generators**, **python**
