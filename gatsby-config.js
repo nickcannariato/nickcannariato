@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "birdcar",
+    siteUrl: "https://www.birdcar.dev",
   },
   plugins: [
     "gatsby-plugin-image",
