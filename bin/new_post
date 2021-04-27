@@ -1,0 +1,23 @@
+#! /usr/bin/env node
+"use strict";
+
+const fs = require("fs");
+const path = require("path");
+
+const { createFilePath } = require(`gatsby-source-filesystem`);
+const yargs = require("yargs/yargs");
+const { hideBin } = require("yargs/helpers");
+
+
+const { argv } = yargs(hideBin(process.argv))
+.command("$0 <title>", "generate a new Gatsby post", (yargs) => {
+  return yargs.positional("title", {
+    describe: "The title of your new post",
+    type: "string",
+  });
+})
+.strict();
+
+const postDir = path.resolve(`${__dirname}/../posts`);
+const postSlug = createFilePath()
+const newFile = fs.createWriteStream(`${postPath}/${}`)
