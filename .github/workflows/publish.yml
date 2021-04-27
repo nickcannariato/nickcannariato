@@ -1,0 +1,36 @@
+on:
+  release:
+    types: [released]
+name: Publish to Netlify
+
+jobs:
+  get_changed_posts:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+  add_and_update_datetimes:
+    runs-on: ubuntu-latest
+    needs: get_changed_posts
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+  create_discussion:
+    runs-on: ubuntu-latest
+    needs: add_and_update_datetimes
+
+  publish_to_netlify:
+    runs-on: ubuntu-latest
+    needs: [add_and_update_datetimes, create_discussion]
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+      - name: Publish site
+        uses: netlify/actions/build@8f45b27
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
